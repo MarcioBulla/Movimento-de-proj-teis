@@ -1,13 +1,17 @@
-\documentclass[12pt]{article}
+ \documentclass[12pt, a4paper]{article}
+    \usepackage[brazil]{babel}
+    \usepackage{indentfirst}
+    \title{Relatório Mecânica Clássica}
+    \author{Marcio Ap. Bulla Junior\\
+    \small Universidade Federal do Paraná - Centro Politécnico - Jardim das Américas -\\
+    \small 81531-980 - Curitiba - PR - Brasil}
+    \date{\today}
+    
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
-    \usepackage[brazil]{babel}
-    \usepackage{iftex}
-    \usepackage{indentfirst}
-
     
-    \everymath{\displaystyle}
+    \usepackage{iftex}
     \ifPDFTeX
     	\usepackage[T1]{fontenc}
     	\usepackage{mathpazo}
@@ -159,11 +163,9 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-\title{Relatório Mecânica Clássica}
-\author{Marcio Ap. Bulla Junior\\
-\small Universidade Federal do Paraná - Centro Politécnico - Jardim das Américas -\\
-    \small 81531-980 - Curitiba - PR - Brasil}
-\date{\today}
+    \title{Relatorio}
+    
+    
     
     
     
@@ -385,8 +387,8 @@
     
 
     
-    \hypertarget{metodologia}{%
-\section*{metodologia}\label{metodologia}}
+    \hypertarget{Metodologia}{%
+\section*{Metodologia}\label{metodologia}}
 
 Usaremos o \emph{python} com o \emph{jupyter}, o qual facilita as
 aplicações e visualizações dos dados. Dessa forma, para obter os
@@ -506,7 +508,7 @@ numérica:}\label{definindo-condiuxe7uxf5es-iniciais-constantes-intervalo-da-sol
 \PY{n}{c} \PY{o}{=} \PY{l+m+mf}{0.5}
 \PY{n}{m} \PY{o}{=} \PY{l+m+mi}{10}
 \PY{c+c1}{\PYZsh{} Intervalo da solução}
-\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
+\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{4.1}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -546,7 +548,7 @@ tempo:}\label{plotando-gruxe1fico-do-comportamentos-horizontais-em-funuxe7uxe3o-
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-(-0.9404243892796738, 22.213203435596427)
+(-0.8037210827762173, 22.213203435596427)
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -571,7 +573,7 @@ tempo:}\label{plotando-gruxe1fico-do-comportamento-vertical-em-funuxe7uxe3o-do-t
 \PY{n}{z}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sol}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{sol}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{c}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Posição (m)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Posição vertical em função do tempo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{sol}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sol}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{sol}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
 
 \PY{n}{vz}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sol}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{sol}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n}{c}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{orange}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{vz}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Velocidade (\PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{frac}\PY{l+s+si}{\PYZob{}m\PYZcb{}}\PY{l+s+si}{\PYZob{}s\PYZcb{}}\PY{l+s+s2}{\PYZdl{})}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -585,7 +587,7 @@ tempo:}\label{plotando-gruxe1fico-do-comportamento-vertical-em-funuxe7uxe3o-do-t
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-(-8.349108400192053, 22.213203435596423)
+(-8.245291037449661, 22.213203435596423)
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -616,6 +618,9 @@ gráfico por
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Criando um espaço de tempo superior para percusos mais duradouros}
+\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{300}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
+
 \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{91}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}  \PY{c+c1}{\PYZsh{} loop variando \PYZdl{}\PYZbs{}theta\PYZdl{}}
     \PY{c+c1}{\PYZsh{} Tranformando graus em radianos}
     \PY{n}{theta\PYZus{}i} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{n}{\PYZus{}}\PY{p}{)}
@@ -814,7 +819,7 @@ solução:}\label{definindo-condiuxe7uxf5es-iniciais-constantes-e-valores-da-sol
 \PY{n}{u} \PY{o}{=} \PY{l+m+mi}{2}
 \PY{n}{w} \PY{o}{=} \PY{l+m+mi}{3}
 \PY{c+c1}{\PYZsh{} Intervalo da solução}
-\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{300}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
+\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{4.8}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -856,7 +861,7 @@ tempo:}\label{plotando-gruxe1fico-da-soluuxe7uxe3o-para-velocidade-e-posiuxe7uxe
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{15}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-(0.9998848376388001, 22.213203435596427)
+(1.0000830036698356, 22.213203435596427)
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -884,7 +889,7 @@ tempo:}\label{plotando-gruxe1fico-da-posiuxe7uxe3o-vertical-em-funuxe7uxe3o-do-t
 \PY{n}{zw}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sol\PYZus{}v}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{sol\PYZus{}v}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{c}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{zw}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Posição (m)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{zw}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Posição vertical em função do tempo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\PY{n}{zw}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{sol\PYZus{}v}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sol\PYZus{}v}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{zw}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{sol\PYZus{}v}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
 
 \PY{n}{vzw}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sol\PYZus{}v}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{sol\PYZus{}v}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n}{c}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{orange}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{vzw}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{velocidade (\PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{frac}\PY{l+s+si}{\PYZob{}m\PYZcb{}}\PY{l+s+si}{\PYZob{}s\PYZcb{}}\PY{l+s+s2}{\PYZdl{})}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -898,7 +903,7 @@ tempo:}\label{plotando-gruxe1fico-da-posiuxe7uxe3o-vertical-em-funuxe7uxe3o-do-t
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{16}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-(-2.041473987891144, 22.213203435596427)
+(-2.041473983060623, 22.213203435596423)
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -930,6 +935,9 @@ para aleatorizar as escolhas das constantes \(u\) e \(w\) variando
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{17}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Criando um espaço de tempo superior para caso o vento contribua para em percurso mais duradouro}
+\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{300}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
+
 \PY{c+c1}{\PYZsh{} Função para capturar pontos, no qual a velocidade em z é zero}
 \PY{k}{def} \PY{n+nf}{topo\PYZus{}uw}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n}{r}\PY{p}{,} \PY{n}{g}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{m}\PY{p}{,} \PY{n}{u}\PY{p}{,} \PY{n}{w}\PY{p}{)}\PY{p}{:}
     \PY{n}{x}\PY{p}{,} \PY{n}{z}\PY{p}{,} \PY{n}{vx}\PY{p}{,} \PY{n}{vz} \PY{o}{=} \PY{n}{r}
@@ -972,7 +980,7 @@ para aleatorizar as escolhas das constantes \(u\) e \(w\) variando
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{17}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-<matplotlib.legend.Legend at 0x7fb5ea173be0>
+<matplotlib.legend.Legend at 0x7fd0fc86d100>
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -1054,7 +1062,7 @@ numerica:}\label{definindo-condiuxe7uxf5es-iniciais-constantes-intervalo-da-solu
 \PY{n}{m} \PY{o}{=} \PY{l+m+mi}{5}
 \PY{n}{h} \PY{o}{=} \PY{l+m+mi}{4}
 \PY{c+c1}{\PYZsh{} Intervalo da solução}
-\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
+\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -1094,7 +1102,7 @@ tempo:}\label{plotando-gruxe1fico-da-posiuxe7uxe3o-horizontal-em-funuxe7uxe3o-do
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{21}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-(-1.000000526476611, 22.213203435596427)
+(-0.9999999891582524, 22.213203435596427)
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -1123,7 +1131,7 @@ tempo:}\label{plotando-gruxe1fico-da-posiuxe7uxe3o-vertical-em-funuxe7uxe3o-do-t
 \PY{n}{z}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sol\PYZus{}e}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{sol\PYZus{}e}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{c}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Posição (m)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Posição vertical em função do tempo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{sol\PYZus{}e}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sol\PYZus{}e}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{z}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{sol\PYZus{}e}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
 
 \PY{n}{vz}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sol\PYZus{}e}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{sol\PYZus{}e}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n}{c}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{orange}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{vz}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Velocidade (\PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{frac}\PY{l+s+si}{\PYZob{}m\PYZcb{}}\PY{l+s+si}{\PYZob{}s\PYZcb{}}\PY{l+s+s2}{\PYZdl{})}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -1137,7 +1145,7 @@ tempo:}\label{plotando-gruxe1fico-da-posiuxe7uxe3o-vertical-em-funuxe7uxe3o-do-t
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{22}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-(-9.39469841116954, 22.213203435596423)
+(-9.39370566201273, 22.213203435596423)
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -1151,9 +1159,7 @@ subir com a velocidade inicial a resistência do ar diminui e para descer
 iniciando verticalmente parada a resistência aumenta tanto por estar
 caindo quanto por estar aumentando a velocidade. Dessa forma, atenuando
 a descida. Isso fica evidente no gráfico da velocidade, pois logo após
-começar a descida a velocidade é atenuada e tende a zero. Mas só ficará
-próximo de zero após \(z=0\) (o que não tem significado físico), pois a
-resistência do ar explodirá exponencialmente.
+começar a descida a velocidade é atenuada e tende a zero.
 
     \hypertarget{alternativa-b}{%
 \subsubsection{Alternativa (b)}\label{alternativa-b}}
